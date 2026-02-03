@@ -7,7 +7,7 @@ from flask import Flask, request, jsonify, render_template_string
 app = Flask(__name__)
 
 def get_conn():
-    conn_str = os.environ["POSTGRESQLCONNSTR_default"]
+    conn_str = os.environ["AZURE_POSTGRESQL_CONNECTIONSTRING"]
 
     # Convert Azure format → dict
     settings = dict(item.split("=") for item in conn_str.split(";") if item)
